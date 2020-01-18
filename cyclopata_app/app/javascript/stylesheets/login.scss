@@ -1,0 +1,72 @@
+
+
+
+.zmain-head{
+  height: 150px;
+  background: #FFF;
+
+}
+
+.zsidenav {
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.zmain {
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .zsidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .zlogin-form{
+    margin-top: 10%;
+  }
+
+  .zregister-form{
+    margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .zmain{
+    margin-left: 40%;
+  }
+
+  .zsidenav{
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .zlogin-form{
+    margin-top: 80%;
+  }
+
+  .zregister-form{
+    margin-top: 20%;
+  }
+}
+
+
+.zlogin-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.zlogin-main-text h2{
+  font-weight: 300;
+}
+
+.zbtn-black{
+  background-color: #000 !important;
+  color: #fff;
+}

@@ -1,0 +1,48 @@
+<div class="main-board">
+  <div class="row">
+    <div class="col-2">&nbsp;</div>
+    <div class="card col-8">
+      <div class="card-body">
+        <button class="btn btn-primary" onclick="console.log('se clickeo');"> Cick</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-8 card">
+      <div class="card-body">
+        <table class="table .table-responsive">
+          <thead class="users-thead">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Talla</th>
+            <th scope="col">Clases</th>
+            <th scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @clients.each do |client| %>
+            <tr>
+              <td scope="row"><strong><%= client.id %></strong></td>
+              <td scope="row"><%= client.username %></td>
+              <td scope="row"><%= client.name.nil? ? " ": client.name %></td>
+              <td scope="row"><%= client.last_name.nil? ? " " : client.last_name %></td>
+              <td scope="row"><%= client.shoe_size.nil? ? " ": client.shoe_size %></td>
+              <td scope="row">1</td>
+              <td scope="row">1</td>
+
+
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+
+</div></div>
+</div>
+
+
+
