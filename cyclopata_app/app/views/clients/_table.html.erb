@@ -1,0 +1,62 @@
+<table class="table .table-responsive" id="clients_tab">
+  <thead class="users-thead">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Usuario</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellidos</th>
+    <th scope="col">Talla</th>
+    <th scope="col">Clases</th>
+    <th scope="col">Acciones</th>
+  </tr>
+  </thead>
+  <tbody id="clients_table">
+  <% if @clients.empty?  %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td scope="row"> No hay resultados</td>
+  </tr>
+
+  <% else  %>
+  <% @clients.each do |client| %>
+    <tr>
+      <td scope="row"><strong><%= client.id %></strong></td>
+      <td scope="row"><%= client.username %></td>
+      <td scope="row"><%= client.name.nil? ? " ": client.name %></td>
+      <td scope="row"><%= client.last_name.nil? ? " " : client.last_name %></td>
+      <td scope="row"><%= client.shoe_size.nil? ? " ": client.shoe_size %></td>
+      <td scope="row">1</td>
+      <td scope="row">
+        <a class="btn-floating btn-large waves-effect waves-light blue" title="Ver Perfil" href="<%= show_clients_path(client.id)%>"><i class="material-icons">remove_red_eye</i></a>
+        </a>
+        <button class="btn-floating btn-large waves-effect waves-light green" title="Agregar Clases"><i class="material-icons">add</i></button>
+        <button class="btn-floating btn-large waves-effect waves-light red" title="Eliminar Clases"><i class="material-icons">remove</i></button>
+      </td>
+
+      <input type="hidden" value="<%= deactivate_clients_path(client.id)%>" id="url_deactivate">
+    </tr>
+  <% end %>
+    <%end %>
+  </tbody>
+
+  <div class="col-md-3 right">
+    <!--           <%#= form_tag clients_path, method: :get do %>
+             <%#= text_field_tag :search, "" %>
+             <%#= submit_tag 'Search' %>
+           <%# end %>-->
+
+      Buscar: <input id="c_search" placeholder="Buscar Usuario" name="search" type="text" autocomplete="off" title="Buscar Usuario" />
+
+
+
+  </div>
+</table>
+<div class="will_p right">
+  <%= will_paginate @clients %>
+</div>
+
+
+<%= hidden_field_tag 'url_search_clients', search_clients_path %>
+<%= hidden_field_tag 'url_add_clases', add_clases_clients_path %>

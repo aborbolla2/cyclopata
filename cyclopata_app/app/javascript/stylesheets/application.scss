@@ -1,0 +1,16 @@
+@import './bootstrap_custom.scss';
+@import 'materialize-css/dist/css/materialize';
+/*
+*= require sweetalert2
+*/
+.active .type14 {
+  background-color: #fff;
+  width: 12px;
+  margin: auto;
+}
+.active .type14:before {
+  width: 6px;
+}
+.active .type14:after {
+  width: 25px;
+}

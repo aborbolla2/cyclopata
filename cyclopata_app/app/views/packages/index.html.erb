@@ -1,0 +1,81 @@
+
+
+<div class="main-board">
+  <div class="row">
+    <div class="col-2">&nbsp;</div>
+    <div class="card col-8" >
+      <div class="card-body">
+        <h2 align="center"> Paquetes</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-8 card">
+      <div class="card-body">
+        <table class="table .table-responsive" id="coaches_tab">
+          <a class="btn-floating btn-large waves-effect waves-light green right " title="Ver Perfil" href="<%= new_package_path%>"><i class="material-icons">add</i></a>
+
+          <thead class="users-thead">
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Clases</th>
+            <th scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody id="clients_table">
+          <% if @packages.nil? or @packages.empty?  %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td scope="row"> No hay resultados</td>
+            </tr>
+
+          <% else  %>
+            <% @packages.each do |package| %>
+                <tr>
+                  <td scope="row"><strong><%= package.id %></strong></td>
+                  <td scope="row"><%= package.package_type.name%></td>
+                  <td scope="row"><%= package.name.nil? ? " ": package.name %></td>
+                  <td scope="row"><%= package.clases%></td>
+                  <td scope="row">
+                    <!--                  <a class="btn-floating btn-large waves-effect waves-light blue" title="Ver Perfil" href="<%#= coach_path(coach.id)%>"><i class="material-icons">remove_red_eye</i></a>-->
+                    <a class="btn-floating btn-large waves-effect waves-light amber" title="Editar" href="<%= edit_package_path(package.id) %>"><i class="material-icons">create</i></a>
+                    <% if package.is_active? %>
+                      <a class="btn-floating btn-large waves-effect waves-light btn_delete red" id="btn-delete-package" title="Desactivar" url="<%= deactivate_package_path(package.id)%>" data=""><i class="material-icons">delete</i></a>
+                      <% else  %>
+                      <a class="btn-floating btn-large waves-effect waves-light btn_delete light-blue" id="btn-activate-package" title="Activar" url="<%= activate_package_path(package.id)%>" data=""><i class="material-icons">done</i>
+                      <% end  %>
+
+                    </a>
+                  </td>
+
+                </tr>
+
+            <% end %>
+          <%end %>
+          </tbody>
+        </table>
+      </div>
+
+    </div></div>
+</div>
+<div class="row">
+  <div class="col-2">&nbsp;</div>
+  <div class="col-md-8">
+
+    <a class="btn-floating btn-large waves-effect waves-light grey" title="Atras" href="<%= settings_path%>"><i class="material-icons">navigate_before</i>Configuracion</a>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
