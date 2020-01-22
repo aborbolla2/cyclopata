@@ -13,4 +13,8 @@ class HomeController < ApplicationController
   def admin
 
   end
+
+  def settings
+
+  end
 end

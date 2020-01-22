@@ -9,3 +9,13 @@
 //= require twitter/bootstrap
 //= require_tree .
 import '../stylesheets/application'
+
+$("#btn-datos").click(function () {
+    $("#datos_usuario").fadeIn("fast");
+    $("#historial_usuario").fadeOut("fast");
+});
+
+$("#btn-historial").click(function () {
+    $("#historial_usuario").fadeIn("fast");
+    $("#datos_usuario").fadeOut("fast");
+});

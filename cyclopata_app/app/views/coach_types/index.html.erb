@@ -1,0 +1,70 @@
+
+
+<div class="main-board">
+  <div class="row">
+    <div class="col-2">&nbsp;</div>
+    <div class="card col-8" >
+      <div class="card-body">
+        <h2 align="center"> Tipos de Coaches</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-8 card">
+      <div class="card-body">
+        <table class="table .table-responsive" id="coaches_tab">
+          <a class="btn-floating btn-large waves-effect waves-light green right " title="Ver Perfil" href="<%= new_coach_type_path%>"><i class="material-icons">add</i></a>
+
+          <thead class="users-thead">
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody id="clients_table">
+          <% if @coach_types.nil? or @coach_types.empty?  %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td scope="row"> No hay resultados</td>
+            </tr>
+
+          <% else  %>
+            <% @coach_types.each do |coach| %>
+              <tr>
+                <td scope="row"><strong><%= coach.id %></strong></td>
+                <td scope="row"><%= coach.name.nil? ? " ": coach.name %></td>
+                <td scope="row">
+                  <a class="btn-floating btn-large waves-effect waves-light amber" title="Editar" href="<%= edit_coach_type_path(coach.id) %>"><i class="material-icons">create</i></a>
+                  <button  id_coach="<%=coach.id%>"  id="btn-delete-coach" class="btn-floating btn-large waves-effect waves-light red" url="<%=delete_coach_type_path(coach.id) %>"  title="Eliminar" ><i class="material-icons">delete</i></button>
+
+
+              </tr>
+
+          <%end %>
+            <% end  %>
+          </tbody>
+        </table>
+      </div>
+
+    </div></div>
+</div>
+<div class="row">
+  <div class="col-2">&nbsp;</div>
+  <div class="col-md-8">
+
+    <a class="btn-floating btn-large waves-effect waves-light grey" title="Atras" href="<%= settings_path%>"><i class="material-icons">navigate_before</i>Configuracion</a>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+

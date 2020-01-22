@@ -1,0 +1,81 @@
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="card col-md-8">
+  <div class="card-content">
+    <img src="..." class="rounded mx-auto d-block" alt="...">
+    <h3> <%= @client.name + " "+ @client.last_name %></h3><br>
+    <div class="row">
+      <h4>Clases Disponibles: <%= @client.clases %></h4>   </div>
+
+    <button class="btn-floating btn-large waves-effect waves-light green right" title="Agregar Clases"  style="margin-left:10px;"><i class="material-icons">add</i></button>
+
+    <a class="waves-effect waves-light btn-large pull-right" id="btn-historial"><i class="material-icons right">history</i>Clases</a>
+    <a class="waves-effect waves-light btn-large" id="btn-datos"><i class="material-icons right">folder</i>Paquetes</a>
+
+  </div>
+
+  <div class="card-content grey lighten-4">
+    <div id="datos_usuario">
+      <table class="table .table-responsive">
+        <thead class="users-thead">
+        <tr>
+          <th scope="col">Tipo de Paquete</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Clases</th>
+          <th scope="col">Fecha Inicial</th>
+          <th scope="col">Fecha de Vencimiento</th>
+
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row"></td>
+            <td scope="row"></td>
+            <td scope="row"></td>
+            <td scope="row"></td>
+
+
+          </tr>
+        </tbody>
+      </table>
+
+
+      </div>
+    <div id="historial_usuario" style="display: none;">
+      <table class="table .table-responsive">
+        <thead class="users-thead">
+        <tr>
+          <th scope="col">Tipo de Clase</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Coach</th>
+          <th scope="col">Horario</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td scope="row"></td>
+          <td scope="row"></td>
+          <td scope="row"></td>
+          <td scope="row"></td>
+
+
+
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-2">&nbsp;</div>
+<div class="col-md-8">
+
+  <a class="btn-floating btn-large waves-effect waves-light grey" title="Atras" href="<%= clients_path%>"><i class="material-icons">navigate_before</i>Atras</a>
+</div>
+
+
+</div>

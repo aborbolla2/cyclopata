@@ -74,3 +74,9 @@ gem 'rails-bootstrap-material-design', '~> 0.5.10.1'
 
 gem 'rails-assets-jquery', source:'https://rails-assets.org'
 gem 'rails-assets-datatables', source:'https://rails-assets.org'
+
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
+gem 'carrierwave'
+
+gem 'will_paginate', '~> 3.1.0'
