@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_051214) do
+ActiveRecord::Schema.define(version: 2020_01_22_033034) do
+
+  create_table "coach_types", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coaches", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "coach_type_id"
+    t.boolean "is_active"
+    t.index ["coach_type_id"], name: "index_coaches_on_coach_type_id"
+  end
+
+  create_table "package_types", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "packages", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "package_type_id"
+    t.integer "clases"
+    t.boolean "is_active"
+    t.index ["package_type_id"], name: "index_packages_on_package_type_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,8 +60,13 @@ ActiveRecord::Schema.define(version: 2020_01_18_051214) do
     t.string "last_name"
     t.float "shoe_size"
     t.boolean "is_admin"
+    t.boolean "is_active"
+    t.string "avatar"
+    t.integer "clases"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coaches", "coach_types"
+  add_foreign_key "packages", "package_types"
 end

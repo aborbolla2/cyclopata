@@ -1,0 +1,22 @@
+<%= form_with(model: package_type, local: true) do |form| %>
+  <% if package_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(package_type.errors.count, "error") %> prohibited this package_type from being saved:</h2>
+
+      <ul>
+        <% package_type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name,"Nombre" %>
+    <%= form.text_field :name, autofocus: true, autocomplete: 'package_type', class: 'form-control',:placeholder=>"Nombre" %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Guardar', :class => 'btn btn-primary right' %>
+  </div>
+<% end %>
+
+

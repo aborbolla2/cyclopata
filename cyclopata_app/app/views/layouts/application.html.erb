@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="mais">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -44,7 +44,7 @@
     <!-- Links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-
+          <%= current_user.username.upcase()%>
       </li>
       <li class="nav-item logouts">
         <%= link_to destroy_user_session_path, class:"nohov",method: :delete do %>
@@ -75,7 +75,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="">
                 <span class="sidebar-icon"> <i class="material-icons">schedule</i></span>
                 <span class="fadeInRight animated nav-link-name name-hide tax-show">Horario</span>
               </a>
@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<%=settings_path %>">
                 <span class="sidebar-icon"> <i class="material-icons">settings</i></span>
                 <span class="fadeInRight animated nav-link-name name-hide tax-show">Configuracion</span>
               </a>
@@ -104,7 +104,7 @@
   </div>
 
 <% end  %>
-
+<%= render 'sweetify/alert' %>
   <%=yield %>
   </body>
 </html>

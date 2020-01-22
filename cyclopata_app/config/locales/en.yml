@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    previous_label: <span class="btn-floating btn-small waves-effect waves-light light-blue" title="Atras"><i class="material-icons">navigate_before</i></span>
+    next_label: <span class="btn-floating btn-small waves-effect waves-light blue" title="Siguiente"><i class="material-icons">navigate_next</i></span>
